@@ -3,7 +3,11 @@
 Official PyTorch implementation of  
 **"PCASTNet: A Physics-Constrained Adaptive Style Transfer Network for Sample Generation in Cross-Machine Small-Sample Fault Diagnosis"**. (Code **coming soon**.)
 
-PCASTNet targets **cross-machine small-sample fault diagnosis**, where the monitored machine has very limited fault data while auxiliary machines provide abundant samples. The framework decouples **fault content** (from a reference machine) and **machine style** (from the monitored machine) via style transfer, and introduces **physics-aware constraints** to ensure realistic and physically consistent synthetic samples. :contentReference[oaicite:0]{index=0}
+PCASTNet targets **cross-machine small-sample fault diagnosis**, where the monitored machine has very limited fault data while auxiliary machines provide abundant samples. The framework decouples **fault content** (from a reference machine) and **machine style** (from the monitored machine) via style transfer, and introduces **physics-aware constraints** to ensure realistic and physically consistent synthetic samples. 
+
+<p align="center">
+  <img src="framework.jpg" alt="GMSIFN Framework" width="800">
+</p>
 
 ---
 
@@ -181,5 +185,5 @@ For questions or collaborations, please feel free to contact:
 
 - Contact: untuitivist@163.com
 
-Cods and documentation are **coming soon**.
+More details and documentation are **coming soon**.
 
