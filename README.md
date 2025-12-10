@@ -6,7 +6,7 @@ Official PyTorch implementation of
 PCASTNet targets **cross-machine small-sample fault diagnosis**, where the monitored machine has very limited fault data while auxiliary machines provide abundant samples. The framework decouples **fault content** (from a reference machine) and **machine style** (from the monitored machine) via style transfer, and introduces **physics-aware constraints** to ensure realistic and physically consistent synthetic samples. 
 
 <p align="center">
-  <img src="framework.jpg" alt="GMSIFN Framework" width="800">
+  <img src="img/pipeline.pdf" alt="PCASTNet pipeline" width="800">
 </p>
 
 ---
