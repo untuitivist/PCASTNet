@@ -72,13 +72,71 @@ reset/
 
 生成样本和训练模型都属于 run 输出，保存在 `experiments/`，不作为固定数据放在 `data/`。
 
-## 安装
+## 环境
 
-如果已有可用环境，直接使用即可。否则执行：
+本 demo 是 PyTorch/CUDA 实验。部分检查可以在 CPU 上运行，但完整的 encoder、
+style-transfer、generate、classifier 流程应使用 NVIDIA GPU 运行。
+
+推荐环境口径如下：
+
+| 组件 | 要求 |
+| --- | --- |
+| 操作系统 | Windows 或 Linux |
+| Python | 3.10 或更高 |
+| GPU | 支持 CUDA PyTorch 的 NVIDIA GPU |
+| 主要框架 | PyTorch + torchvision |
+| 其他依赖 | numpy、pillow、matplotlib、tqdm、tensorboardX、scikit-learn |
+
+当前最终 demo 在本机验证过的环境为：
+
+| 组件 | 本机值 |
+| --- | --- |
+| Python | 3.12.8, Anaconda |
+| PyTorch | 2.7.0+cu128 |
+| torchvision | 0.22.0+cu128 |
+| PyTorch 报告的 CUDA runtime | 12.8 |
+| GPU | NVIDIA GeForce RTX 4070 Ti |
+| NVIDIA driver | 576.52 |
+
+这些版本不是硬性锁死要求。关键要求是完整训练前
+`torch.cuda.is_available()` 必须返回 `True`。
+
+### 创建环境
+
+使用 conda：
+
+```powershell
+conda create -n pcastnet python=3.12 -y
+conda activate pcastnet
+```
+
+PyTorch 请按本机显卡驱动从官方命令安装。CUDA 12.x 环境示例：
+
+```powershell
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+```
+
+然后安装项目和其余依赖：
+
+```powershell
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
+
+如果已有可用环境，只需要补装缺失依赖：
 
 ```powershell
 python -m pip install -e .
 ```
+
+### 验证 GPU 和依赖版本
+
+```powershell
+python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
+nvidia-smi
+```
+
+如果第一条命令输出 `False`，需要先修正 PyTorch/CUDA 安装，再启动完整 demo。
 
 ## AdaIN VGG 权重
 

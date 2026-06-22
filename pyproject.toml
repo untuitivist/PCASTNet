@@ -34,7 +34,8 @@ dependencies = [
   "pillow",
   "matplotlib",
   "tqdm",
-  "tensorboardX"
+  "tensorboardX",
+  "scikit-learn"
 ]
 
 [project.scripts]

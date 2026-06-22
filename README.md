@@ -81,14 +81,74 @@ reset/
 Generated samples and trained models are run outputs under `experiments/`; they
 are not fixed assets under `data/`.
 
-## Install
+## Environment
 
-Use the existing Python environment if available. Otherwise install the project
-editable:
+The demo is a PyTorch/CUDA experiment. CPU execution is technically possible
+for some checks, but the full encoder, style-transfer, generation, and
+classifier workflow should be run on an NVIDIA GPU.
+
+Recommended baseline:
+
+| Component | Requirement |
+| --- | --- |
+| OS | Windows or Linux |
+| Python | 3.10 or newer |
+| GPU | NVIDIA GPU with CUDA-capable PyTorch |
+| Main framework | PyTorch + torchvision |
+| Extra packages | numpy, pillow, matplotlib, tqdm, tensorboardX, scikit-learn |
+
+The final local demo was validated with:
+
+| Component | Local value |
+| --- | --- |
+| Python | 3.12.8, Anaconda |
+| PyTorch | 2.7.0+cu128 |
+| torchvision | 0.22.0+cu128 |
+| CUDA runtime reported by PyTorch | 12.8 |
+| GPU | NVIDIA GeForce RTX 4070 Ti |
+| NVIDIA driver | 576.52 |
+
+These exact versions are not a strict requirement. The important requirement is
+that `torch.cuda.is_available()` returns `True` for full training.
+
+### Create environment
+
+Using conda:
+
+```powershell
+conda create -n pcastnet python=3.12 -y
+conda activate pcastnet
+```
+
+Install PyTorch from the official command that matches your CUDA driver. For
+example, for a CUDA 12.x environment:
+
+```powershell
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+```
+
+Then install this project and the remaining dependencies:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
+
+If you already have a working environment, install only the missing packages:
 
 ```powershell
 python -m pip install -e .
 ```
+
+### Verify GPU and package versions
+
+```powershell
+python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
+nvidia-smi
+```
+
+If the first command prints `False`, fix the PyTorch/CUDA installation before
+starting the full demo.
 
 ## AdaIN VGG weights
 
