@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Runtime logs / temporary files
+*.log
+*.err
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+class_to_idx.json
+
+# Training and evaluation outputs
+runs/
+outputs/
+experiments/
+
+# Large model/checkpoint artifacts.
+# The AdaIN VGG weight is downloaded with:
+# wget -c https://s3.amazonaws.com/xunhuang-public/adain/vgg_normalised.t7 -O src/models/vgg/vgg.pth
+*.pth
+*.pth.tar
+*.pt
+*.ckpt
+*.t7
+
+# Local OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

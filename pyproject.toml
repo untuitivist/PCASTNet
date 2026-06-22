@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcastnet"
+version = "0.1.0"
+description = "Physics-Constrained Adaptive Style Transfer Network for cross-machine small-sample fault diagnosis."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "PCASTNet contributors" }
+]
+keywords = [
+  "fault-diagnosis",
+  "style-transfer",
+  "small-sample-learning",
+  "bearing-diagnostics",
+  "pytorch"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+  "torch",
+  "torchvision",
+  "numpy",
+  "pillow",
+  "matplotlib",
+  "tqdm",
+  "tensorboardX"
+]
+
+[project.scripts]
+pcastnet = "pcastnet.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pcastnet*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
