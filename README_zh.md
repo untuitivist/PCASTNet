@@ -241,6 +241,24 @@ AUC 使用 softmax 概率计算 macro one-vs-rest ROC-AUC。
 - `data/` 只保留 demo 所需 CWT 固定数据。
 - encoder 训练不落地 split 数据集，只做运行时内存划分。
 
+## 引用
+
+如果本仓库或 demo 对你的工作有帮助，请引用：
+
+```bibtex
+@ARTICLE{11298365,
+  author={Hu, Xiaoxi and Li, Junyi and Huang, Yuhan and Zhang, Xinyu and Wang, Hengjun and Wang, Huan and He, Yiming},
+  journal={IEEE Transactions on Instrumentation and Measurement},
+  title={PCASTNet: A Physics-Constrained Adaptive Style Transfer Network for Sample Generation in Cross-Machine Small-Sample Fault Diagnosis},
+  year={2025},
+  volume={74},
+  number={},
+  pages={1-17},
+  keywords={Feature extraction;Monitoring;Fault diagnosis;Data models;Semantics;Time-frequency analysis;Generative adversarial networks;Decoding;Accuracy;Vibrations;Cross-machine;sample generation;signal processing;small-sample fault diagnosis;style transfer;physics-constrained neural networks},
+  doi={10.1109/TIM.2025.3643085}
+}
+```
+
 ## License
 
 发布或分发代码和数据前，请先查看 [LICENSE.md](LICENSE.md)。

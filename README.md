@@ -257,6 +257,24 @@ AUC is computed as macro one-vs-rest ROC-AUC from softmax probabilities.
 - Do not create physical split datasets for encoder training; the split is
   runtime-only.
 
+## Citation
+
+If this repository or demo is useful for your work, please cite:
+
+```bibtex
+@ARTICLE{11298365,
+  author={Hu, Xiaoxi and Li, Junyi and Huang, Yuhan and Zhang, Xinyu and Wang, Hengjun and Wang, Huan and He, Yiming},
+  journal={IEEE Transactions on Instrumentation and Measurement},
+  title={PCASTNet: A Physics-Constrained Adaptive Style Transfer Network for Sample Generation in Cross-Machine Small-Sample Fault Diagnosis},
+  year={2025},
+  volume={74},
+  number={},
+  pages={1-17},
+  keywords={Feature extraction;Monitoring;Fault diagnosis;Data models;Semantics;Time-frequency analysis;Generative adversarial networks;Decoding;Accuracy;Vibrations;Cross-machine;sample generation;signal processing;small-sample fault diagnosis;style transfer;physics-constrained neural networks},
+  doi={10.1109/TIM.2025.3643085}
+}
+```
+
 ## License
 
 See [LICENSE.md](LICENSE.md) before publishing or redistributing the code and
